@@ -31,9 +31,17 @@ fun main() {
     val pergunta1 = Pergunta("Qual a pergunta?", 1)
     val pergunta2 = Pergunta("Qual a pergunta?", 2)
 
+    val (pergunta, resposta) = pergunta1
+
+    val p = pergunta1.pergunta
+    val r = pergunta1.respostaCerta
+
+    println(pergunta)
+    println(resposta)
+
     /*println(pergunta1) // Pergunta@682a0b20
     println(pergunta2) // Pergunta@3d075dc0*/
 
-    println(pergunta1 == pergunta2)
+//    println(pergunta1 == pergunta2)
 
 }
