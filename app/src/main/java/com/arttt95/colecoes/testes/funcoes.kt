@@ -45,19 +45,71 @@ fun imprimirTexto(texto: String) {
 
 }
 
+/*fun executar() {
+    println("Executar")
+}
+
+fun executar2() = println("Executar")*/
+
+/*class Botao {
+
+    fun configurarCliqueBotao( nome: String, funcao: ()-> Unit ) {
+        funcao()
+        println("Nome: $nome")
+    }
+
+}*/
+
+class Botao {
+
+    fun configurarCliqueBotao( funcao: (String)-> Unit ) {
+        funcao("Penaldo")
+    }
+
+}
+
+/*class Clique {
+    fun executarClique() {
+        println("Executou clique do botão, função comum!")
+    }
+}*/
+
 fun main() {
+
+    val botao = Botao()
+
+    botao.configurarCliqueBotao {
+        println("Executou função lambda executou nome: $it")
+    }
+
+//    val clique = Clique()
+
+    /*botao.configurarCliqueBotao(
+        clique::executarClique
+    )*/
+
+    /*botao.configurarCliqueBotao {
+        println("Executou função lambda")
+    }*/
+
+    // Função lambda
+    /*val funcaoLambda = { nome: String, idade: Int ->
+        println("Usuario: $nome | idade: $idade")
+    }
+
+    funcaoLambda("Pessi", 33)*/
 
     /*val matematica = Matematica()
     val ret = matematica.somar(10, 15)*/
 
-//    val ret = somar(12, 10)
+    /*val ret = somar(12, 10)
 
     imprimirTexto("Pessi")
 
-//    val ret = calcular( ::somar)
-//    println(ret)
+    val ret = calcular( ::somar)
+    println(ret)*/
 
-    val matematica = Matematica()
-    calcular( matematica::somar)
+    /*val matematica = Matematica()
+    calcular(matematica::somar)*/
 
 }

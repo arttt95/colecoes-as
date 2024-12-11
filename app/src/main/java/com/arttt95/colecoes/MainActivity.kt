@@ -40,11 +40,11 @@ class MainActivity : AppCompatActivity() {
 
         /*Recursos.id.text_numero*/
 
-        /*btnExecutar.setOnClickListener {
+        btnExecutar.setOnClickListener {
 
             textResultado.text = "Cristiano Penaldo"
 
-        }*/
+        }
 
     }
 
