@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -40,15 +41,23 @@ class MainActivity : AppCompatActivity() {
 
         /*Recursos.id.text_numero*/
 
-        btnExecutar.setOnClickListener {
+        /*btnExecutar.setOnClickListener {
 
             textResultado.text = "Cristiano Penaldo"
 
-        }
+        }*/
 
     }
 
     fun cliqueBotao(view: View) {
+
+        /*Toast.makeText(
+            this,
+            "Sucesso",
+            Toast.LENGTH_LONG
+        ).show()*/
+
+        Toast.makeText(this, "Sucesso", Toast.LENGTH_LONG).show()
 
 //        view.display
 
