@@ -15,29 +15,29 @@ package com.arttt95.colecoes.testes
 }*/
 
 // Getters e Setters
-class Usuario () {
+/*class Usuario () {
 
     var nome: String = ""
-        /*get() {
-            return field.uppercase()
+//        get() {
+//            return field.uppercase()
 //            println("Get: $field")
-        }*/
+//        }
 
-        /*set(value) {
-            field = "$value"
-            println(field)
-        }*/
+//        set(value) {
+//            field = "$value"
+//            println(field)
+//        }
     var idade: Int = 0
-    /*val maiorIdade
-        get() = idade >= 18*/
+//    val maiorIdade
+//        get() = idade >= 18
 
     var maiorIdade: String = ""
         get() {
-            /*if(idade >= 18) {
-                return "Sim"
-            } else {
-                return "Não"
-            }*/
+//            if(idade >= 18) {
+//                return "Sim"
+//            } else {
+//                return "Não"
+//            }
             return if(idade >= 18) {
                 "Sim"
             } else {
@@ -45,15 +45,45 @@ class Usuario () {
             }
         }
 
+}*/
+
+class Usuario {
+
+    fun salvarTelefones(codigo: Int, vararg telefones: String) {
+        for(telefone in telefones) {
+            println(
+                "Telefone: ($codigo) $telefone"
+            )
+        }
+    }
+
 }
 
 fun main() {
 
-    val usuario = Usuario(/*"Shisui Uchiha", 14*/)
+    val usuario = Usuario()
+    usuario.salvarTelefones(
+        19,
+        "99894-9894",
+        "99895-9895",
+        "99896-9896",
+        "99897-9897"
+    )
+
+    /*val pessoa = Pessoa()
+    pessoa.salvarTelefone(
+        11,
+        "99894-9894",
+        "99895-9895",
+        "99896-9896",
+        "99897-9897"
+    )*/
+
+    /*val usuario = Usuario(*//*"Shisui Uchiha", 14*//*)
     usuario.nome = "Obito"
     usuario.idade = 17
 
-    println("Nome: ${usuario.nome} | Idade: ${usuario.idade} | É de maior? ${usuario.maiorIdade}")
+    println("Nome: ${usuario.nome} | Idade: ${usuario.idade} | É de maior? ${usuario.maiorIdade}")*/
 
     /*val pessoa = Pessoa()
     pessoa.nome = "Itachi Uchiha"

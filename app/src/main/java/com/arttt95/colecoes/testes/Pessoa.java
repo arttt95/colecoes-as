@@ -5,6 +5,16 @@ public class Pessoa {
     private String nome = "";
     int idade = 0;
 
+    public void salvarTelefone(int codigo, String... telefones) {
+        for(String telefone : telefones) {
+            System.out.println("Telefone: ("
+                    + codigo
+                    + ") "
+                    + telefone
+            );
+        }
+    }
+
     public String getNome() {
         System.out.println("get: " + nome);
         return nome;
