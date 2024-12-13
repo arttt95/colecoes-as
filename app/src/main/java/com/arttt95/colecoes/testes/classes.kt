@@ -10,11 +10,55 @@ package com.arttt95.colecoes.testes
 
 }*/
 
-data class Pergunta (val pergunta: String, val respostaCerta: Int){ // Normalmente utilizada para tratar dados
-    /*fun exibir() = println("Exibir")*/
+/*data class Pergunta (val pergunta: String, val respostaCerta: Int){ // Normalmente utilizada para tratar dados
+    *//*fun exibir() = println("Exibir")*//*
+}*/
+
+// Getters e Setters
+class Usuario () {
+
+    var nome: String = ""
+        /*get() {
+            return field.uppercase()
+//            println("Get: $field")
+        }*/
+
+        /*set(value) {
+            field = "$value"
+            println(field)
+        }*/
+    var idade: Int = 0
+    /*val maiorIdade
+        get() = idade >= 18*/
+
+    var maiorIdade: String = ""
+        get() {
+            /*if(idade >= 18) {
+                return "Sim"
+            } else {
+                return "Não"
+            }*/
+            return if(idade >= 18) {
+                "Sim"
+            } else {
+                "Não"
+            }
+        }
+
 }
 
 fun main() {
+
+    val usuario = Usuario(/*"Shisui Uchiha", 14*/)
+    usuario.nome = "Obito"
+    usuario.idade = 17
+
+    println("Nome: ${usuario.nome} | Idade: ${usuario.idade} | É de maior? ${usuario.maiorIdade}")
+
+    /*val pessoa = Pessoa()
+    pessoa.nome = "Itachi Uchiha"
+
+    println("Nome: ${pessoa.nome}")*/
 
     /*val motorista = Motorista("Cristiano Penaldo")
     val caminhao = motorista.Caminhao("H-112")
@@ -28,7 +72,7 @@ fun main() {
     val motorista = Motorista("Cristiano Penaldo")
     motorista.exibirDadosMotorista()*/
 
-    val pergunta1 = Pergunta("Qual a pergunta?", 1)
+    /*val pergunta1 = Pergunta("Qual a pergunta?", 1)
     val pergunta2 = Pergunta("Qual a pergunta?", 2)
 
     val (pergunta, resposta) = pergunta1
@@ -37,7 +81,7 @@ fun main() {
     val r = pergunta1.respostaCerta
 
     println(pergunta)
-    println(resposta)
+    println(resposta)*/
 
     /*println(pergunta1) // Pergunta@682a0b20
     println(pergunta2) // Pergunta@3d075dc0*/
