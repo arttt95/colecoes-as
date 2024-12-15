@@ -14,5 +14,5 @@ fun main() {
     novaListaNomes.forEach { numero ->
         println(numero)
     }
-
+    
 }
