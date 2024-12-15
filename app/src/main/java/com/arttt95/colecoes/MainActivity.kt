@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.arttt95.colecoes.testes.Produto
 import com.arttt95.colecoes.testes.Recursos
 
 /*class Usuario {
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var textResultado: TextView
     private lateinit var btnExecutar: Button
+
+    fun salvarProduto(produto: Produto) {
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
