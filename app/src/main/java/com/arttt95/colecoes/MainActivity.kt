@@ -1,5 +1,6 @@
 package com.arttt95.colecoes
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -11,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.arttt95.colecoes.testes.Produto
 import com.arttt95.colecoes.testes.Recursos
+import com.arttt95.colecoes.testes.Usuario
 
 /*class Usuario {
     companion object {
@@ -37,6 +39,10 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val usuario: Usuario = Usuario()
+        val intent = Intent(this, MainActivity::class.java)
+//        intent.putExtra("nome", usuario)
 
         textResultado = findViewById(R.id.text_resultado)
         btnExecutar = findViewById(R.id.btn_executar)
