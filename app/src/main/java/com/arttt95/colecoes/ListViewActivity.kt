@@ -22,17 +22,17 @@ class ListViewActivity : AppCompatActivity() {
             insets
         }
 
-        val listaUsuarios = listOf(
+        /*val listaUsuarios = listOf(
             "Shisui", "Nagato", "Obito", "Pain", "Yahiko", "Minato", "Hashirama", "Tobirama"
-        )
+        )*/
 
-        listViewUsuarios = findViewById(R.id.list_usuarios)
+        /*listViewUsuarios = findViewById(R.id.list_usuarios)
         listViewUsuarios.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
             android.R.id.text1,
             listaUsuarios.shuffled()
-        )
+        )*/
 
     }
 }
