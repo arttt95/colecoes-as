@@ -1,5 +1,6 @@
 package com.arttt95.colecoes.testes;
 
+/*
 public class Pessoa {
 
     private String nome = "";
@@ -34,3 +35,4 @@ public class Pessoa {
         this.idade = idade;
     }
 }
+*/
