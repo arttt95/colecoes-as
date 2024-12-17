@@ -55,11 +55,11 @@ class ReciclerViewActivity : AppCompatActivity() {
         rvLista.adapter = MensagemAdapter(lista)
 
         // LinearLayoutManager (XML e Código)
-        /*rvLista.layoutManager = LinearLayoutManager(
+        rvLista.layoutManager = LinearLayoutManager(
             this,
             RecyclerView.VERTICAL,
             false
-        )*/
+        )
 
         // GridLayoutManager
         /*rvLista.layoutManager = GridLayoutManager(
@@ -70,10 +70,10 @@ class ReciclerViewActivity : AppCompatActivity() {
         )*/
 
         // StaggeredGridLayout
-        rvLista.layoutManager = StaggeredGridLayoutManager(
+        /*rvLista.layoutManager = StaggeredGridLayoutManager(
             2,
             RecyclerView.VERTICAL
-        )
+        )*/
 
     }
 }

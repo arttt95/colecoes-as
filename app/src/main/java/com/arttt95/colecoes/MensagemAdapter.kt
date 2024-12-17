@@ -17,8 +17,8 @@ class MensagemAdapter(
         itemView: View
     ) : ViewHolder( itemView ) {
 
-        val textNome: TextView = itemView.findViewById(R.id.text_nome)
-        val textUltima: TextView = itemView.findViewById(R.id.text_ultima)
+        val textNome: TextView = itemView.findViewById(R.id.text_card_nome)
+        val textUltima: TextView = itemView.findViewById(R.id.text_card_ultima)
 //        val textHorario: TextView = itemView.findViewById(R.id.text_horario)
 
     }
@@ -30,8 +30,14 @@ class MensagemAdapter(
             parent.context
         )
 
-        val itemView = layoutInflater.inflate(
+        /*val itemView = layoutInflater.inflate(
             R.layout.item_lista,
+            parent,
+            false
+        )*/
+
+        val itemView = layoutInflater.inflate(
+            R.layout.item_cardview,
             parent,
             false
         )
