@@ -5,8 +5,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.arttt95.colecoes.testes.Mensagem
 
 class ReciclerViewActivity : AppCompatActivity() {
@@ -26,12 +28,12 @@ class ReciclerViewActivity : AppCompatActivity() {
         val lista = listOf(
             Mensagem(
                 "Obito",
-                "Precisamos acabar com a aldeia da folha",
+                "Eai",
                 "10:28"
             ),
             Mensagem(
                 "Minato",
-                "Estou treinando o jutsu de teletransportar",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
                 "08:12"
             ),
             Mensagem(
@@ -46,12 +48,32 @@ class ReciclerViewActivity : AppCompatActivity() {
             )
         )
 
-        // "Shisui", "Nagato", "Obito", "Pain", "Yahiko", "Minato", "Hashirama", "Tobirama"
+//         "Shisui", "Nagato", "Obito", "Pain", "Yahiko", "Minato", "Hashirama", "Tobirama"
 
         rvLista = findViewById(R.id.rv_lista)
 
         rvLista.adapter = MensagemAdapter(lista)
-        rvLista.layoutManager = LinearLayoutManager(this)
+
+        // LinearLayoutManager (XML e Código)
+        /*rvLista.layoutManager = LinearLayoutManager(
+            this,
+            RecyclerView.VERTICAL,
+            false
+        )*/
+
+        // GridLayoutManager
+        /*rvLista.layoutManager = GridLayoutManager(
+            this,
+            2,
+            RecyclerView.VERTICAL,
+            false
+        )*/
+
+        // StaggeredGridLayout
+        rvLista.layoutManager = StaggeredGridLayoutManager(
+            2,
+            RecyclerView.VERTICAL
+        )
 
     }
 }

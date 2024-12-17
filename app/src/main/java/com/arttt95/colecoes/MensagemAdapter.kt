@@ -19,7 +19,7 @@ class MensagemAdapter(
 
         val textNome: TextView = itemView.findViewById(R.id.text_nome)
         val textUltima: TextView = itemView.findViewById(R.id.text_ultima)
-        val textHorario: TextView = itemView.findViewById(R.id.text_horario)
+//        val textHorario: TextView = itemView.findViewById(R.id.text_horario)
 
     }
 
@@ -51,7 +51,7 @@ class MensagemAdapter(
         val mensagem = lista[position]
         holder.textNome.text = mensagem.nome
         holder.textUltima.text = mensagem.ultima
-        holder.textHorario.text = mensagem.horario
+//        holder.textHorario.text = mensagem.horario
     }
 
     // Recuperar a quantidade de itens
