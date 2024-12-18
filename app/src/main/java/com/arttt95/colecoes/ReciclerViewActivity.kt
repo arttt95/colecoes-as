@@ -2,6 +2,7 @@ package com.arttt95.colecoes
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,13 @@ import com.arttt95.colecoes.testes.Mensagem
 class ReciclerViewActivity : AppCompatActivity() {
 
     private lateinit var rvLista: RecyclerView
+    private lateinit var btnClique: Button
+    private lateinit var mensagemAdapter: MensagemAdapter
+
+    override fun onStart() {
+        super.onStart()
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +36,7 @@ class ReciclerViewActivity : AppCompatActivity() {
             insets
         }
 
-        val lista = listOf(
+        val lista = mutableListOf(
             Mensagem(
                 "Obito",
                 "Eai",
@@ -36,7 +44,9 @@ class ReciclerViewActivity : AppCompatActivity() {
             ),
             Mensagem(
                 "Minato",
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting " +
+                        "industry. Lorem Ipsum has been the industry's standard dummy text " +
+                        "ever since the 1500s",
                 "08:12"
             ),
             Mensagem(
@@ -54,8 +64,9 @@ class ReciclerViewActivity : AppCompatActivity() {
 //         "Shisui", "Nagato", "Obito", "Pain", "Yahiko", "Minato", "Hashirama", "Tobirama"
 
         rvLista = findViewById(R.id.rv_lista)
+        btnClique = findViewById(R.id.btn_clique)
 
-        rvLista.adapter = MensagemAdapter(lista) { nome: String ->
+        mensagemAdapter = MensagemAdapter/*(lista)*/ { nome: String ->
             Toast.makeText(this, "Olá $nome", Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, ListViewActivity::class.java)
@@ -65,12 +76,28 @@ class ReciclerViewActivity : AppCompatActivity() {
             )
         }
 
+        mensagemAdapter.atualizarListaDados(lista)
+        rvLista.adapter = mensagemAdapter
+
         // LinearLayoutManager (XML e Código)
         rvLista.layoutManager = LinearLayoutManager(
             this,
             RecyclerView.VERTICAL,
             false
         )
+
+        btnClique.setOnClickListener {
+
+            lista.add(
+                Mensagem(
+                    "Madara",
+                    "Vamos libertar a besta de 10 caldas!",
+                    "10:20"
+                )
+            )
+
+            mensagemAdapter.atualizarListaDados(lista)
+        }
 
         // Divisor de item -> DividerItemDecoration
         /*rvLista.addItemDecoration(

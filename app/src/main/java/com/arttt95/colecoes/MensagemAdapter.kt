@@ -1,25 +1,30 @@
 package com.arttt95.colecoes
 
-import android.database.DataSetObserver
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class MensagemAdapter(
-    private val lista: List<Mensagem>,
+    /*private val lista: List<Mensagem>,*/
     private val clique: (String)-> Unit
 ) : RecyclerView.Adapter<MensagemAdapter.MensagemViewHolder> () {
 
-    fun configurarClick() {
+    private var listaMensagens = mutableListOf<Mensagem>()
 
+    fun atualizarListaDados(lista: MutableList<Mensagem>) {
+//        listaMensagens.addAll(lista)
+        listaMensagens = lista
+        notifyDataSetChanged()
     }
+
+    /*fun configurarClick() {
+
+    }*/
 
     inner class MensagemViewHolder(
         itemView: View
@@ -75,7 +80,7 @@ class MensagemAdapter(
         val horario = lista[position].horario
         holder.textHorario.text = horario*/
 
-        val mensagem = lista[position]
+        val mensagem = listaMensagens[position]
         holder.bind(mensagem)
 
         /*holder.textNome.text = mensagem.nome
@@ -92,7 +97,7 @@ class MensagemAdapter(
 
     // Recuperar a quantidade de itens
     override fun getItemCount(): Int {
-        return lista.size
+        return listaMensagens.size
     }
 
 }
