@@ -1,10 +1,13 @@
 package com.arttt95.colecoes
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -52,7 +55,15 @@ class ReciclerViewActivity : AppCompatActivity() {
 
         rvLista = findViewById(R.id.rv_lista)
 
-        rvLista.adapter = MensagemAdapter(lista)
+        rvLista.adapter = MensagemAdapter(lista) { nome: String ->
+            Toast.makeText(this, "Olá $nome", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, ListViewActivity::class.java)
+
+            startActivity(
+                intent.putExtra("nome", nome)
+            )
+        }
 
         // LinearLayoutManager (XML e Código)
         rvLista.layoutManager = LinearLayoutManager(
@@ -60,6 +71,13 @@ class ReciclerViewActivity : AppCompatActivity() {
             RecyclerView.VERTICAL,
             false
         )
+
+        // Divisor de item -> DividerItemDecoration
+        /*rvLista.addItemDecoration(
+            DividerItemDecoration(
+                this, RecyclerView.VERTICAL
+            )
+        )*/
 
         // GridLayoutManager
         /*rvLista.layoutManager = GridLayoutManager(

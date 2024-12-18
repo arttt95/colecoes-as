@@ -5,21 +5,42 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class MensagemAdapter(
-    private val lista: List<Mensagem>
+    private val lista: List<Mensagem>,
+    private val clique: (String)-> Unit
 ) : RecyclerView.Adapter<MensagemAdapter.MensagemViewHolder> () {
+
+    fun configurarClick() {
+
+    }
 
     inner class MensagemViewHolder(
         itemView: View
     ) : ViewHolder( itemView ) {
 
-        val textNome: TextView = itemView.findViewById(R.id.text_card_nome)
-        val textUltima: TextView = itemView.findViewById(R.id.text_card_ultima)
+        internal val textNome: TextView = itemView.findViewById(R.id.text_card_nome)
+        internal val textUltima: TextView = itemView.findViewById(R.id.text_card_ultima)
 //        val textHorario: TextView = itemView.findViewById(R.id.text_horario)
+        internal val imgPerfil: ImageView = itemView.findViewById(R.id.img_card_perfil)
+        private val carViewPerfil: CardView = itemView.findViewById(R.id.car_view_perfil)
+
+        fun bind(mensagem: Mensagem) { // Conectar
+
+            textNome.text = mensagem.nome
+            textUltima.text = mensagem.ultima
+
+            carViewPerfil.setOnClickListener{
+                clique(mensagem.nome)
+            }
+
+        }
 
     }
 
@@ -55,9 +76,18 @@ class MensagemAdapter(
         holder.textHorario.text = horario*/
 
         val mensagem = lista[position]
-        holder.textNome.text = mensagem.nome
+        holder.bind(mensagem)
+
+        /*holder.textNome.text = mensagem.nome
         holder.textUltima.text = mensagem.ultima
-//        holder.textHorario.text = mensagem.horario
+//        holder.textHorario.text = mensagem.horario*/
+
+        // Aplicar eventos de clique
+        /*val context = holder.imgPerfil.context
+        holder.imgPerfil.setOnClickListener{
+            clique()
+        }*/
+
     }
 
     // Recuperar a quantidade de itens
