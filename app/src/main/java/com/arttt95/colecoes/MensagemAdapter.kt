@@ -16,6 +16,36 @@ class MensagemAdapter(
 
     private var listaMensagens = mutableListOf<Mensagem>()
 
+    fun executarOperacao() {
+        /*listaMensagens.add(
+            0,
+            Mensagem("Madara","Susanoo","10:20")
+        )
+
+        notifyItemInserted(0) //listaMensagens.size*/
+
+        // NotifyItemInserted -> Maneira Usual
+        /*listaMensagens.add(
+            Mensagem("Madara","Susanoo","10:20")
+        )
+        notifyItemInserted(listaMensagens.size)*/
+
+        listaMensagens.add(
+            Mensagem("Madara","Susanoo","10:20")
+        )
+
+        listaMensagens.add(
+            Mensagem("Kakashi","1000 anos de sofrimento","07:40")
+        )
+
+        listaMensagens.add(
+            Mensagem("Iruka","Vamos Naruto","14:07")
+        )
+
+        notifyItemRangeInserted(listaMensagens.size, 3)
+
+    }
+
     fun atualizarListaDados(lista: MutableList<Mensagem>) {
 //        listaMensagens.addAll(lista)
         listaMensagens = lista

@@ -48,7 +48,7 @@ class ReciclerViewActivity : AppCompatActivity() {
                         "industry. Lorem Ipsum has been the industry's standard dummy text " +
                         "ever since the 1500s",
                 "08:12"
-            ),
+            )/*,
             Mensagem(
                 "Hashirama",
                 "Meu irmão está sempre caçando Uchihas",
@@ -58,7 +58,7 @@ class ReciclerViewActivity : AppCompatActivity() {
                 "Nagato",
                 "Todos vão sentir o sofrimento com os meus 7 caminhos",
                 "16:33"
-            )
+            )*/
         )
 
 //         "Shisui", "Nagato", "Obito", "Pain", "Yahiko", "Minato", "Hashirama", "Tobirama"
@@ -77,6 +77,7 @@ class ReciclerViewActivity : AppCompatActivity() {
         }
 
         mensagemAdapter.atualizarListaDados(lista)
+
         rvLista.adapter = mensagemAdapter
 
         // LinearLayoutManager (XML e Código)
@@ -88,15 +89,10 @@ class ReciclerViewActivity : AppCompatActivity() {
 
         btnClique.setOnClickListener {
 
-            lista.add(
-                Mensagem(
-                    "Madara",
-                    "Vamos libertar a besta de 10 caldas!",
-                    "10:20"
-                )
-            )
+            mensagemAdapter.executarOperacao()
 
-            mensagemAdapter.atualizarListaDados(lista)
+            /*lista.add( Mensagem("Madara","Susanoo","10:20") )
+            mensagemAdapter.atualizarListaDados(lista)*/
         }
 
         // Divisor de item -> DividerItemDecoration
