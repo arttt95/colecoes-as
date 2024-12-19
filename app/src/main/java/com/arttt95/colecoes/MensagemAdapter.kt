@@ -17,6 +17,28 @@ class MensagemAdapter(
     private var listaMensagens = mutableListOf<Mensagem>()
 
     fun executarOperacao() {
+
+        // notifyItemRangeRemoved - Avisa o Adapter que o iterável foi reduzido dentro de um range
+        // específico
+        // Int, Int (position start, total de itens)
+        listaMensagens.removeAt(1)
+        listaMensagens.removeAt(2)
+        notifyItemRangeRemoved(1, 2)
+
+        // notifyItemRemoved -> Removendo apenas um item específico
+        /*listaMensagens.removeAt(1)
+        notifyItemRemoved(1)*/
+
+        // notifyItemRangeChanged -> Avisa o Adapter que o iterável foi alterado
+        // esses itens alterados foram em um range específico
+        // Int, Int (início, fim)
+        /*listaMensagens[0] = Mensagem("Pain","Vocês vão sentir o sofrimento","10:20")
+        listaMensagens[1] = Mensagem("Yahiko","Eu morri pelos meus amigos","10:20")
+
+        notifyItemRangeChanged(0,2)*/
+
+        // notifyItemInserted -> Passando uma posição antes do item a ser adicionado
+        // especifica aonde você quer que o item seja alocado na nova leitura dos dados
         /*listaMensagens.add(
             0,
             Mensagem("Madara","Susanoo","10:20")
@@ -24,13 +46,14 @@ class MensagemAdapter(
 
         notifyItemInserted(0) //listaMensagens.size*/
 
-        // NotifyItemInserted -> Maneira Usual
+        // notifyItemInserted -> Maneira Usual, passando apenas o item ele será inserido ao final
+        // da nova leitura do iterável
         /*listaMensagens.add(
             Mensagem("Madara","Susanoo","10:20")
         )
         notifyItemInserted(listaMensagens.size)*/
 
-        listaMensagens.add(
+        /*listaMensagens.add(
             Mensagem("Madara","Susanoo","10:20")
         )
 
@@ -42,7 +65,11 @@ class MensagemAdapter(
             Mensagem("Iruka","Vamos Naruto","14:07")
         )
 
-        notifyItemRangeInserted(listaMensagens.size, 3)
+        notifyItemRangeInserted(listaMensagens.size, 3)*/
+
+        /*listaMensagens[0] = Mensagem("Pain","Vocês vão sentir o sofrimento","10:20")
+
+        notifyItemChanged(0)*/
 
     }
 

@@ -48,7 +48,7 @@ class ReciclerViewActivity : AppCompatActivity() {
                         "industry. Lorem Ipsum has been the industry's standard dummy text " +
                         "ever since the 1500s",
                 "08:12"
-            )/*,
+            ),
             Mensagem(
                 "Hashirama",
                 "Meu irmão está sempre caçando Uchihas",
@@ -58,7 +58,7 @@ class ReciclerViewActivity : AppCompatActivity() {
                 "Nagato",
                 "Todos vão sentir o sofrimento com os meus 7 caminhos",
                 "16:33"
-            )*/
+            )
         )
 
 //         "Shisui", "Nagato", "Obito", "Pain", "Yahiko", "Minato", "Hashirama", "Tobirama"
